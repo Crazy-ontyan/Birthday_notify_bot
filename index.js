@@ -1,3 +1,7 @@
+import { serve } from "@hono/node-server";
+import healthCheckServer from "./server";
+
+require('dotenv').config();
 const { Client, GatewayIntentBits } = require("discord.js");
 
 const client = new Client({
@@ -22,3 +26,9 @@ client.on("messageCreate", (message) => {
 
 //ここにtokenを入れる
 client.login(process.env.DISCORD_BOT_TOKEN);
+
+//Koyeb用のヘルスチェックサーバーを起動
+serve({
+  fetch: healthCheckServer.fetch,
+  port: 8000,
+});
