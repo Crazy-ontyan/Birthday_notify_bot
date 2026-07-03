@@ -1,8 +1,8 @@
 import { serve } from "@hono/node-server";
 import healthCheckServer from "./server.js";
+import "dotenv/config";
 
-require('dotenv').config();
-const { Client, GatewayIntentBits } = require("discord.js");
+import { Client, GatewayIntentBits } from "discord.js";
 
 const client = new Client({
   intents: [
