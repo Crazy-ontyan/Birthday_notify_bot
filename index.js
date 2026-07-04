@@ -55,14 +55,6 @@ client.once("ready", async () => {
   }
 });
 
-client.on("messageCreate", (message) => {
-  if (message.author.bot) return;
-
-  if (message.content === "こんにちは") {
-    message.channel.send("こんにちは！");
-  }
-});
-
 //スラッシュコマンドの受信処理
 client.on("interactionCreate", async (interaction) => {
   if(!interaction.isChatInputCommand()) return;
