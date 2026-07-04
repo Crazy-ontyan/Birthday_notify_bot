@@ -26,7 +26,7 @@ const client = new Client({
   ],
 });
 
-client.once("ready", () => {
+client.once("ready", async () => {
   console.log(`${client.user.tag} としてログインしました`);
 
   //MongoDBに接続
