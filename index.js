@@ -105,7 +105,7 @@ export async function checkAndNotifyBirthdays() {
 //ここにtokenを入れる
 client.login(TOKEN);
 
-//Koyeb用のヘルスチェックサーバーを起動
+//ヘルスチェックサーバーを起動
 serve({
   fetch: healthCheckServer.fetch,
   port: 8000,
