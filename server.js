@@ -24,7 +24,7 @@ app.get("/api/cron", async (c) => {
       message: `チェック完了. 誕生日該当者: ${count}人`,
     });
   } catch (err) {
-    console.error("外部Cronトリガーエラー", error);
+    console.error("外部Cronトリガーエラー", err);
     return c.json({ success: false, error: err.message }, 500);
   }
 });
